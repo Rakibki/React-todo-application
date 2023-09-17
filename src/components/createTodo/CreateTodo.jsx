@@ -1,8 +1,7 @@
 import {useState} from 'react'
 import styles from './CreateTodo.module.css'
 
-const CreateTodo = ({getTodo}) => {
-    const [value, setValue] = useState('')
+const CreateTodo = ({getTodo, value, setValue, setCount, count}) => {
 
     const handleChange = (e) => {
         setValue(e.target.value)
@@ -11,6 +10,7 @@ const CreateTodo = ({getTodo}) => {
     const handleClick = () => {
       getTodo(value)
       setValue("")
+      setCount(count + 1)
     }
 
   return (
